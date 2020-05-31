@@ -362,7 +362,7 @@ class NovalnetServiceProvider extends ServiceProvider
 
                     if(!$paymentService->isRedirectPayment($paymentKey)) {
 						 $paymentService->paymentCalltoNovalnetServer();
-                         $paymentService->validateResponse();
+                         //$paymentService->validateResponse();
                     } else {
                         $paymentProcessUrl = $paymentService->getRedirectPaymentUrl();
                         $event->setType('redirectUrl');
