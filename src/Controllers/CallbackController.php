@@ -829,7 +829,7 @@ class CallbackController extends Controller
                 $transactionData                        = pluginApp(stdClass::class);
                 $transactionData->paymentName           = $this->paymentHelper->getPaymentNameByResponse($requestData['payment_id']);
                 $transactionData->orderNo               = $requestData['order_no'];
-                $transactionData->order_total_amount    = (float) $requestData['amount']/100;
+                $transactionData->order_total_amount    = $requestData['amount'];
                 $requestData['amount'] = (float) $requestData['amount']/100;
                 $requestData['payment_method'] = $transactionData->paymentName;
 				$requestData['system_version'] = NovalnetConstants::PLUGIN_VERSION;
