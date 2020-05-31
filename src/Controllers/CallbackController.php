@@ -483,7 +483,8 @@ class CallbackController extends Controller
                     }
                     $this->paymentHelper->updateOrderStatus($nnTransactionHistory->orderNo, (float)$orderStatus);
                     $this->paymentHelper->updatePayments($this->aryCaptureParams['tid'], $this->aryCaptureParams['tid_status'], $nnTransactionHistory->orderNo);
-                    return $this->renderTemplate($callbackComments);
+                    $this->sendCallbackMail($callbackComments); 
+		   return $this->renderTemplate($callbackComments);
                 }  elseif('PRZELEWY24' == $this->aryCaptureParams['payment_type'] && (!in_array($this->aryCaptureParams['tid_status'], ['100','86']) || '100' != $this->aryCaptureParams['status'])){
                     // Przelewy24 cancel.
                     $callbackComments = '</br>' . sprintf($this->paymentHelper->getTranslatedText('callback_transaction_cancellation',$orderLanguage),date('d.m.Y'), date('H:i:s') ) . '</br>';
@@ -751,7 +752,8 @@ class CallbackController extends Controller
         $insertTransactionLog['payment_name']    = $txnHistory->paymentName;
         $insertTransactionLog['order_no']        = $txnHistory->orderNo;
          $insertTransactionLog['additional_info']   = !empty($txnHistory->additionalInfo) ? json_encode($txnHistory->additionalInfo) : 0;
-        $this->transaction->saveTransaction($insertTransactionLog);
+       $this->getLogger(__METHOD__)->error('callback db',  $insertTransactionLog);
+	    $this->transaction->saveTransaction($insertTransactionLog);
     }
 
     /**
@@ -852,8 +854,18 @@ class CallbackController extends Controller
                 if(!empty($this->aryCaptureParams['test_mode'])) {
                         $callbackComments .= '<br>' . $this->paymentHelper->getTranslatedText('test_order', $requestData['lang']);
                     }
-                $this->sendCallbackMail($callbackComments);
-                
+		 
+		    if($requestData['payment_id'] = '27') {
+			   $invoice_bank_details = '<br>' . $this->paymentService->getInvoicePrepaymentComments($requestData);
+			   $callback_message = $callbackComments . '<br>' . $invoice_bank_details;
+			   $this->sendCallbackMail($callback_message);
+		    } elseif ($requestData['payment_id'] = '59') {
+			   $cashpayment_store_details = '<br>' . $this->paymentHelper->getCashPaymentComments($requestData);
+			   $callback_message = $callbackComments . '<br>' . $cashpayment_store_details;
+			   $this->sendCallbackMail($callback_message);
+		    } else {
+		  	  $this->sendCallbackMail($callbackComments);
+		    }
                 return $this->renderTemplate($callbackComments);
                 
 
