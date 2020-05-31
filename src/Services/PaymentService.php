@@ -873,7 +873,7 @@ class PaymentService
      * @return array
      */
 	public function additionalInfo ($nnPaymentData) {
-		
+         $this->getLogger(__METHOD__)->error('additional', $nnPaymentData);
 	 $lang = strtolower((string)$nnPaymentData['lang']);
 	 $additional_info = [
 		'currency' => $nnPaymentData['currency'],
