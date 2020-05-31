@@ -142,7 +142,7 @@ class NovalnetCcPaymentMethod extends PaymentMethodService
     {
 		$description = trim($this->configRepository->get('Novalnet.novalnet_cc_description'));
 		$description = ($description ? $description : $this->paymentHelper->getTranslatedText('cc_payment_description'));
-		if($this->configRepository->get('Novalnet.novalnet_cc_3d') == 'true' || $this->configRepository->get('Novalnet.novalnet_cc_fraudcheck' == 'true') )
+		if($this->configRepository->get('Novalnet.novalnet_cc_3d') == 'true' || $this->configRepository->get('Novalnet.novalnet_cc_3d_fraudcheck' == 'true') )
 			$description .= $this->paymentHelper->getTranslatedText('redirectional_payment_description');
         return $description;
     }
