@@ -235,7 +235,7 @@ class PaymentHelper
         $payment->properties = $paymentProperty;
         
         $paymentObj = $this->paymentRepository->createPayment($payment);
-        
+        $this->getLogger(__METHOD__)->error('ggggggggggggggggggggg', $payment);
         $this->assignPlentyPaymentToPlentyOrder($paymentObj, (int)$requestData['order_no']);
     }
     
