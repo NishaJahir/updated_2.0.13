@@ -870,11 +870,6 @@ class CallbackController extends Controller
 			   $callback_message = $callbackComments . '<br>' . $invoice_bank_details;
 			   $this->sendCallbackMail($callback_message);
 		    } elseif ($requestData['payment_id'] == '59' && $requestData['tid_status'] == '100') {
-			   if(!empty($requestData['cp_checkout_token']))
-				{
-				$this->sessionStorage->getPlugin()->setValue('novalnet_checkout_token', $requestData['cp_checkout_token']);
-				$this->sessionStorage->getPlugin()->setValue('novalnet_checkout_url', $this->paymentService->getBarzhalenTestMode($requestData['test_mode']));        
-				}
 			   $cashpayment_store_details = '<br>' . $this->paymentHelper->getCashPaymentComments($requestData);
 			   $callback_message = $callbackComments . '<br>' . $cashpayment_store_details;
 			   $this->sendCallbackMail($callback_message);
