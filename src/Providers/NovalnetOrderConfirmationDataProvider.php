@@ -101,9 +101,11 @@ class NovalnetOrderConfirmationDataProvider
                         }
                     }
                     $get_transaction_details = $transactionLog->getTransactionData('orderNo', $orderId);
+                    $paymentHelper->logger('getting', $get_transaction_details);
                     foreach ($get_transaction_details as $transaction_details) {
                         $payment_details = $transaction_details;
                     }
+                    $paymentHelper->logger('get', $payment_details);
                     if (in_array($bank_details['paymentName'], ['novalnet_invoice', 'novalnet_prepayment']) && in_array($tid_status, ['91', '100']) && $payment_details['amount'] > $payment_details['callbackAmount']) {
                         
                         $comments .= PHP_EOL . $paymentService->getInvoicePrepaymentComments($bank_details);
