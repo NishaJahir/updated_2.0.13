@@ -306,11 +306,12 @@ class CallbackController extends Controller
                 {
                         if ($nnTransactionHistory->order_paid_amount < $nnTransactionHistory->order_total_amount)
                         {
-                        
+                        $this->getLogger(__METHOD__)->error('level 2', $this->aryCaptureParams['payment_type']);
                             
                             $callbackComments = sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
                             if($nnTransactionHistory->order_total_amount <= ($nnTransactionHistory->order_paid_amount + $this->aryCaptureParams['amount']))
                             {
+				    $this->getLogger(__METHOD__)->error('level 2 amount', $this->aryCaptureParams['payment_type']);
                                 $paymentConfigName = substr($nnTransactionHistory->paymentName, 9);
                                 $orderStatus = $this->config->get('Novalnet.novalnet_' . $paymentConfigName . '_callback_order_status');
                                 $this->paymentHelper->updateOrderStatus($nnTransactionHistory->orderNo, (float)$orderStatus);
@@ -324,6 +325,7 @@ class CallbackController extends Controller
                             $paymentData['order_no']    = $nnTransactionHistory->orderNo;
                             $paymentData['mop']         = $nnTransactionHistory->mopId;
                             $this->paymentHelper->createPlentyPayment($paymentData);
+				 $this->getLogger(__METHOD__)->error('levellllll', $paymentData);
                             $this->sendCallbackMail($callbackComments);
                             return $this->renderTemplate($callbackComments);
                         } elseif ($this->aryCaptureParams['payment_type'] == 'ONLINE_TRANSFER_CREDIT') {
