@@ -818,11 +818,11 @@ class PaymentService
      */
     public function getDatabaseValues($orderId) {
         $database = pluginApp(DataBase::class);
-        $total_transaction_details = $database->query(TransactionLog::class)->where('orderNo', '=', $orderId)->get();
+        $transaction_details = $database->query(TransactionLog::class)->where('orderNo', '=', $orderId)->get();
 	  
 	 $this->getLogger(__METHOD__)->error('service db', $transaction_details);
-        if (!empty($total_transaction_details)) {
-	foreach ($total_transaction_details as $transaction_details) {
+        if (!empty($transaction_details)) {
+	
         //Typecasting object to array
         $transaction_details = (array)($transaction_details[0]);
 	$this->getLogger(__METHOD__)->error('service db1', $transaction_details);
@@ -837,7 +837,7 @@ class PaymentService
 		$this->getLogger(__METHOD__)->error('service db2', $transaction_details);
         return $transaction_details;
         }
-	}
+	
     }
     
     /**
