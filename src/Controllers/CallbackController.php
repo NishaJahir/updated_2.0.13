@@ -304,8 +304,8 @@ class CallbackController extends Controller
                         if ($nnTransactionHistory->order_paid_amount < $nnTransactionHistory->order_total_amount)
                         {
                         
-                            $callbackComments  = '</br>';
-                            $callbackComments .= sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
+                            
+                            $callbackComments = sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
                             if($nnTransactionHistory->order_total_amount <= ($nnTransactionHistory->order_paid_amount + $this->aryCaptureParams['amount']))
                             {
                                 $paymentConfigName = substr($nnTransactionHistory->paymentName, 9);
@@ -330,10 +330,11 @@ class CallbackController extends Controller
                             $paymentData['order_no']    = $nnTransactionHistory->orderNo;
                             $paymentData['mop']         = $nnTransactionHistory->mopId;
                             $this->paymentHelper->createPlentyPayment($paymentData);
-                            $callbackComments  = '</br>';
-                            $callbackComments .= sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
+                            
+                            $callbackComments  = sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
                             $callbackComments .= sprintf($this->paymentHelper->getTranslatedText('callback_status_change',$orderLanguage), (float) ($this->aryCaptureParams['amount'] / 100), $nnTransactionHistory->orderNo );
-                            return $this->renderTemplate($callbackComments);
+                            $this->sendCallbackMail($callbackComments);
+			    return $this->renderTemplate($callbackComments);
                         } 
                         else
                         {
@@ -342,8 +343,8 @@ class CallbackController extends Controller
                 }
                 else
                 {
-                            $callbackComments  = '</br>';
-                            $callbackComments .= sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
+                            
+                            $callbackComments = sprintf($this->paymentHelper->getTranslatedText('callback_initial_execution',$orderLanguage), $this->aryCaptureParams['shop_tid'], ($this->aryCaptureParams['amount'] / 100), $this->aryCaptureParams['currency'], date('Y-m-d H:i:s'), $this->aryCaptureParams['tid'] ).'</br>';
                             $this->sendCallbackMail($callbackComments);
                             return $this->renderTemplate($callbackComments);
                 }
