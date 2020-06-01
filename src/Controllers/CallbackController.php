@@ -30,6 +30,7 @@ use Plenty\Modules\Payment\Contracts\PaymentRepositoryContract;
 use Plenty\Modules\Payment\Models\Payment;
 use Plenty\Modules\Payment\Models\PaymentProperty;
 use Novalnet\Constants\NovalnetConstants;
+use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use \stdClass;
 
 /**
@@ -45,7 +46,7 @@ class CallbackController extends Controller
      * @var config
      */
     private $config;
-
+   private $sessionStorage;
     /**
      * @var PaymentHelper
      */
@@ -229,6 +230,7 @@ class CallbackController extends Controller
                                   Twig $twig,
                                   AddressRepositoryContract $addressRepository,
                                   TransactionService $tranactionService,
+				  FrontendSessionStorageFactoryContract $sessionStorage,
                                   OrderRepositoryContract $orderRepository
                                 )
     {
@@ -240,6 +242,7 @@ class CallbackController extends Controller
         $this->twig                 = $twig;
         $this->transaction          = $tranactionService;
         $this->orderRepository      = $orderRepository;
+	    $this->sessionStorage  = $sessionStorage;
         $this->aryCaptureParams     = $request->all();
     }
 
@@ -861,6 +864,11 @@ class CallbackController extends Controller
 			   $callback_message = $callbackComments . '<br>' . $invoice_bank_details;
 			   $this->sendCallbackMail($callback_message);
 		    } elseif ($requestData['payment_id'] = '59') {
+			   if(!empty($requestData['cp_checkout_token']))
+				{
+				$this->sessionStorage->getPlugin()->setValue('novalnet_checkout_token', $requestData['cp_checkout_token']);
+				$this->sessionStorage->getPlugin()->setValue('novalnet_checkout_url', $this->paymentService->getBarzhalenTestMode($requestData['test_mode']));        
+				}
 			   $cashpayment_store_details = '<br>' . $this->paymentHelper->getCashPaymentComments($requestData);
 			   $callback_message = $callbackComments . '<br>' . $cashpayment_store_details;
 			   $this->sendCallbackMail($callback_message);
