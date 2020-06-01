@@ -25,6 +25,7 @@ use Plenty\Modules\Payment\Contracts\PaymentRepositoryContract;
 use \Plenty\Modules\Authorization\Services\AuthHelper;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Novalnet\Services\PaymentService;
+use Novalnet\Services\TransactionService;
 /**
  * Class NovalnetOrderConfirmationDataProvider
  *
@@ -40,10 +41,11 @@ class NovalnetOrderConfirmationDataProvider
      * @param Arguments $arg
      * @return string
      */
-    public function call(Twig $twig, PaymentRepositoryContract $paymentRepositoryContract, $arg)
+    public function call(Twig $twig, PaymentRepositoryContract $paymentRepositoryContract, $arg, )
     {
         $paymentHelper = pluginApp(PaymentHelper::class);
         $paymentService = pluginApp(PaymentService::class);
+        $transactionLog  = pluginApp(TransactionService::class); 
         $sessionStorage = pluginApp(FrontendSessionStorageFactoryContract::class);
         $order = $arg[0];
         $barzhlentoken = '';
@@ -98,10 +100,15 @@ class NovalnetOrderConfirmationDataProvider
                             $comments .= PHP_EOL . $paymentHelper->getTranslatedText('gurantee_sepa_pending_payment_text');
                         }
                     }
-                    if (in_array($bank_details['paymentName'], ['novalnet_invoice', 'novalnet_prepayment']) && in_array($tid_status, ['91', '100'])) {
+                    $get_transaction_details = $transactionLog->getTransactionData('orderNo', $orderId);
+                    foreach ($get_transaction_details as $transaction_details) {
+                        $payment_details = $transaction_details;
+                    }
+                    if (in_array($bank_details['paymentName'], ['novalnet_invoice', 'novalnet_prepayment']) && in_array($tid_status, ['91', '100']) && $payment_details['amount'] > $payment_details['callbackAmount']) {
+                        
                         $comments .= PHP_EOL . $paymentService->getInvoicePrepaymentComments($bank_details);
                     }
-                    if($db_details['payment_id'] == '59' ) {
+                    if($db_details['payment_id'] == '59' && $payment_details['amount'] > $payment_details['callbackAmount']) {
                         $paymentHelper->logger('cash', $cashpayment_comments);
                         $comments .= $cashpayment_comments;
                     }
