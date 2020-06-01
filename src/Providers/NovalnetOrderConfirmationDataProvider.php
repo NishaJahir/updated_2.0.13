@@ -52,6 +52,7 @@ class NovalnetOrderConfirmationDataProvider
         if (!empty ($order['id'])) {
             foreach($payments as $payment)
             {
+                $paymentHelper->logger('testtttt', $payment);
                 $properties = $payment->properties;
                 foreach($properties as $property)
                 {
@@ -65,6 +66,7 @@ class NovalnetOrderConfirmationDataProvider
                 }
                 if ($property->typeId == 22)
                 {
+                    $paymentHelper->logger('called', $property->typeId);
                 $cashpayment_comments = $property->value;
                 }
                 }
