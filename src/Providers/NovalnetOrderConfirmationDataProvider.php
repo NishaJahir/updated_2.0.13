@@ -106,11 +106,11 @@ class NovalnetOrderConfirmationDataProvider
                         $payment_details = $transaction_details;
                     }
                     $paymentHelper->logger('get', $payment_details);
-                    if (in_array($bank_details['paymentName'], ['novalnet_invoice', 'novalnet_prepayment'])) {
+                    if (in_array($bank_details['paymentName'], ['novalnet_invoice', 'novalnet_prepayment']) && ($payment_details->amount > $payment_details->callbackAmount) ) {
                         
                         $comments .= PHP_EOL . $paymentService->getInvoicePrepaymentComments($bank_details);
                     }
-                    if($db_details['payment_id'] == '59' ) {
+                    if($db_details['payment_id'] == '59' && ($payment_details->amount > $payment_details->callbackAmount)) {
                         $paymentHelper->logger('cash', $cashpayment_comments);
                         $comments .= $cashpayment_comments;
                     }
