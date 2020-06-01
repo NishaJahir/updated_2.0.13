@@ -880,7 +880,7 @@ class PaymentService
 	 $lang = strtolower((string)$nnPaymentData['lang']);
 	 $additional_info = [
 		'currency' => $nnPaymentData['currency'],
-		'product' => !empty($nnPaymentData['product_id']) ? $nnPaymentData['product_id'] : $nnPaymentData['product'] ,
+		'product_id' => !empty($nnPaymentData['product_id']) ? $nnPaymentData['product_id'] : $nnPaymentData['product'] ,
 		'payment_id' => $nnPaymentData['payment_id'],
 		'plugin_version' => $nnPaymentData['system_version'],
 		'test_mode' => !empty($nnPaymentData['test_mode']) ? $this->paymentHelper->getTranslatedText('test_order',$lang) : '0',
