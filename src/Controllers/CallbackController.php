@@ -863,11 +863,11 @@ class CallbackController extends Controller
                         $callbackComments .= '<br>' . $this->paymentHelper->getTranslatedText('test_order', $requestData['lang']);
                     }
 		 
-		    if( in_array ($requestData['payment_id'], ['27','41']) && in_array ($this->aryCaptureParams['tid_status'], ['91','100']) {
+		    if( in_array ($requestData['payment_id'], [27, 41]) && in_array ($this->aryCaptureParams['tid_status'], [91, 100]) ){
 			   $invoice_bank_details = '<br>' . $this->paymentService->getInvoicePrepaymentComments($requestData);
 			   $callback_message = $callbackComments . '<br>' . $invoice_bank_details;
 			   $this->sendCallbackMail($callback_message);
-		    } elseif ($requestData['payment_id'] = '59' && $this->aryCaptureParams['tid_status'] == '100') {
+		    } elseif ($requestData['payment_id'] == '59' && $this->aryCaptureParams['tid_status'] == '100') {
 			   if(!empty($requestData['cp_checkout_token']))
 				{
 				$this->sessionStorage->getPlugin()->setValue('novalnet_checkout_token', $requestData['cp_checkout_token']);
