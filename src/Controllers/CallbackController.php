@@ -829,7 +829,9 @@ class CallbackController extends Controller
                 $requestData['mop']= $property->value;
                 $payment_type = (string)$this->paymentHelper->getPaymentKeyByMop($property->value);
                 $requestData['payment_id'] = $this->paymentService->getkeyByPaymentKey($payment_type);
-
+		if (in_array($requestData['payment_type'], ['GUARANTEED_INVOICE', 'GUARANTEED_DIRECT_DEBIT_SEPA'])) {
+		$requestData['payment_id'] = ($requestData['payment_type'] == 'GUARANTEED_INVOICE') ? '41' : '40';
+		}
                 $transactionData                        = pluginApp(stdClass::class);
                 $transactionData->paymentName           = $this->paymentHelper->getPaymentNameByResponse($requestData['payment_id']);
                 $transactionData->orderNo               = $requestData['order_no'];
