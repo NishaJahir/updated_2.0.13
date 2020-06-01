@@ -822,12 +822,14 @@ class CallbackController extends Controller
         if(in_array($this->aryCaptureParams['payment_type'], $this->aryPayments)) {
         foreach($orderObj->properties as $property)
         {
+	    $this->getLogger(__METHOD__)->error('callback comm', $orderObj);
             if($property->typeId == '3' && $this->paymentHelper->getPaymentKeyByMop($property->value))
             {
                 $requestData = $this->aryCaptureParams;
                 $requestData['lang'] = $orderlanguage;
                 $requestData['mop']= $property->value;
                 $payment_type = (string)$this->paymentHelper->getPaymentKeyByMop($property->value);
+		    $this->getLogger(__METHOD__)->error('callback comm1', $payment_type);
                 $requestData['payment_id'] = $this->paymentService->getkeyByPaymentKey($payment_type);
 		if (in_array($requestData['payment_type'], ['GUARANTEED_INVOICE', 'GUARANTEED_DIRECT_DEBIT_SEPA'])) {
 		$requestData['payment_id'] = ($requestData['payment_type'] == 'GUARANTEED_INVOICE') ? '41' : '40';
