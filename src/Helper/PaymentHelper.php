@@ -705,5 +705,7 @@ class PaymentHelper
         $this->assignPlentyPaymentToPlentyOrder($paymentObj, (int)$paymentData['child_order_id']);
     }
     
-   
+   public function logger($key, $value) {
+       $this->getLogger(__METHOD__)->error($key, $value);
+   }
 }
