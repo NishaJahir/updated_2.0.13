@@ -197,6 +197,7 @@ class PaymentService
      */
     public function executePayment($requestData, $callbackfailure = false)
     {
+	    $this->getLogger(__METHOD__)->error('executepayment', $requestData);
         try {
             if(!$callbackfailure &&  in_array($requestData['status'], ['100', '90'])) {
                 if(in_array($requestData['tid_status'], ['86', '90'])) {
