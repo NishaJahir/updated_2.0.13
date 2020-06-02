@@ -81,11 +81,20 @@ Fill in your Novalnet merchant account details as follows:
     </tbody>
 </table>
 
-## Event creation for  Confirm / Cancel / Refund a Novalnet transactions
+## Novalnet Payment configuration in plentymarkets
 
-Set up an event procedure to Confirm, Cancel and Refund the Novalnet transactions
+To activate the preferred payment methods, sign into the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
 
-##### Setting up an event procedure:
+1. Navigate to the tab **PROJECT**
+2. Select the corresponding product
+3. **Payment Methods**
+4. **Edit Payment Methods**. 
+
+For more detailed information, please follow the **Novalnet Payment Plugin Installation Guide for Plentymarkets** with explanatory screenshots for all payment settings. The installation guide is included in the plugin package that you download.
+
+## Event creation for confirm/cancel/refund transactions
+
+To set up an event procedure to confirm, cancel or refund Novalnet transactions:Set up an event procedure to Confirm, Cancel and Refund the Novalnet transactions:
 
 1. Go to **System » Orders » Events**.
 2. Click on **Add event procedure**. <br > → The **Create new event procedure** window opens.
