@@ -380,7 +380,7 @@ class NovalnetServiceProvider extends ServiceProvider
     
     // Listen for the document generation event
         $eventDispatcher->listen(OrderPdfGenerationEvent::class,
-        function (OrderPdfGenerationEvent $event) use ($dataBase, $paymentHelper, $paymentService, $paymentRepository) {
+        function (OrderPdfGenerationEvent $event) use ($dataBase, $paymentHelper, $paymentService, $paymentRepository, $transactionLogData) {
             
         /** @var Order $order */ 
         $order = $event->getOrder();
@@ -407,7 +407,7 @@ class NovalnetServiceProvider extends ServiceProvider
         $paymentKey = $paymentHelper->getPaymentKeyByMop($payments[0]->mopId);
         $db_details = $paymentService->getDatabaseValues($order->id);
         $this->getLogger(__METHOD__)->error('dbbb',$db_details );
-	$get_transaction_details = $transactionLog->getTransactionData('orderNo', $orderId);
+	$get_transaction_details = $transactionLogData->getTransactionData('orderNo', $orderId);
                     $totalCallbackAmount = 0;
                     foreach ($get_transaction_details as $transaction_details) {
                        $totalCallbackAmount += $transaction_details->callbackAmount;
