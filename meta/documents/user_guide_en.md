@@ -228,10 +228,10 @@ To display the payment transaction details in the invoice (pdf), please follow t
 3. **Create new event procedure** window opens
 4. Enter a name
 5. Select the event according to table 4
-6. **Save** the settings → The event procedure is created
+6. **Save** the settings <br />→ The event procedure is created
 7. Carry out the further settings according to table 4
 8. Place a check mark next to the option **Active**
-9. **Save** the settings → The event procedure is saved
+9. **Save** the settings <br />→ The event procedure is saved
 
 <table>
    <thead>
@@ -275,11 +275,11 @@ To display the payment transaction details in the invoice (pdf), please follow t
 **Payment / Transaction status notification - Asynchronous vendor script**
 Novalnet system (via asynchronous) transmits information about all transaction and their status to the merchant’s system.
 Notification / Webhook URL Configuration:
-    1. Login into your merchant account at the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
-    2. Navigate to the tab **PROJECT**
-    3. Select the corresponding product
-    4. Project Overview
-    5. Set up the **Vendor script URL / Notification & Webhook URL** for your store. In general the Notification / Webhook URL will be like **YOUR SITE URL/payment/novalnet/callback**
+1. Login into your merchant account at the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
+2. Navigate to the tab **PROJECT**
+3. Select the corresponding product
+4. Project Overview
+5. Set up the **Vendor script URL / Notification & Webhook URL** for your store. In general the Notification / Webhook URL will be like **YOUR SITE URL/payment/novalnet/callback**
 
 ## Display transaction details on order confirmation page
 
@@ -288,11 +288,12 @@ To display the payment transaction details on the order confirmation page, pleas
 1. Navigate to **CMS » Container links**
 2. Go to the **Novalnet payment details area**.
 3. Activate the container **Order confirmation: Additional payment information**.
-4. **Save** the settings → The payment transaction details will be displayed
+4. **Save** the settings <br />→ The payment transaction details will be displayed
 
 ## Further information and support
 
-We are glad to answer all your questions and provide you with more information any time. Please do not hesitate to contact us at: 
+We are glad to answer all your questions and provide you with more information any time. Please do not hesitate to contact us at:
+
 **E-mail:** sales@novalnet.de 
 **Tel: +49 89 - 923 068 320** 
 **Web:** www.novalnet.de 
