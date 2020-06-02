@@ -206,7 +206,9 @@ class PaymentController extends Controller
                     }
             }
         }
-     
+        if (!empty ($address->companyName) ) {
+            unset($serverRequestData['data']['birth_date']);
+        }
         $this->sessionStorage->getPlugin()->setValue('nnPaymentData', $serverRequestData);  
         return $this->response->redirectTo('place-order');
     }
