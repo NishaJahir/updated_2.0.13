@@ -6,8 +6,8 @@
 
 # Novalnet payment plugin for plentymarkets
 
-Novalnet's payment plugin for plentymarkets is an end-to-end solution for accepting both international and local payments across the world. This full-service payment plugin automates your entire payment processing through one single PCI certified payment platform including the following benefits and more:
-    • End-to-end payment solution incl. 15+ automated payment services (e.g. debt collection, fraud prevention) 
+Novalnet's payment plugin for plentymarkets is an end-to-end solution for accepting both international and local payments across the world. This full-service payment plugin automates your entire payment processing through one single PCI certified payment platform including the following benefits and more:<br>
+    • End-to-end payment solution incl. 15+ automated payment services (e.g. debt collection, fraud prevention) <br>
     • Accept and process 100+ international and local payment methods
     • One contract - no hidden costs or restrictive contract terms for payment processing
     • PCI compliance (PCI DSS Level 1) & extensive payment licensing ready for you
