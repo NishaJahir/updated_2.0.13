@@ -15,7 +15,7 @@ Novalnet's payment plugin for plentymarkets is an end-to-end solution for accept
 
 The Novalnet payment plugin integrates your business with the BaFin (German Federal Financial Supervisory Authority) accredited Novalnet payment platform and eliminates the need of multiple contracts and licenses for successful payment processing. Streamline your payment processes and focus on your core businesses' growth!
 
-# Supported Novalnet payment methods
+## Supported Novalnet payment methods
 
 - Credit Card (3DSecure and non 3DSecure)
 - Direct Debit SEPA
@@ -40,10 +40,10 @@ To accept and process payments via the Novalnet payment plugin for plentymarkets
 To set up the merchant credentials, navigate to the path **Plugins -> Plugin overview -> Novalnet -> Configuration**
 
 Fill in your Novalnet merchant account details as follows:
-1. Login into your merchant account at Novalnet Merchant Administration Portal
-2. Navigate to the tab PROJECT
+1. Login into your merchant account at [Novalnet Merchant Administration Portal](https://admin.novalnet.de/)
+2. Navigate to the tab **PROJECT**
 3. Select the corresponding product
-4. Go to Shop Parameters and copy the necessary fields such as Merchant ID, Authentication code, Project ID, Tariff ID and Payment access key etc.
+4. Go to Shop Parameters and copy the necessary fields such as **Merchant ID**, **Authentication code**, **Project ID**, **Tariff ID** and **Payment access key** etc.
 
 <table>
     <thead>
@@ -60,155 +60,23 @@ Fill in your Novalnet merchant account details as follows:
         </tr>        
         <tr>
             <td><b>Merchant ID</b></td>
-            <td>A merchant identification number is provided by Novalnet after opening a merchant account at Novalnet. Please contact Novalnet at <a href="mailto:sales@novalnet.de" target="_blank">sales@novalnet.de</a> for getting your own merchant account.</td>
+            <td>Enter your merchant number that you received after opening a merchant account at Novalnet. Please contact Novalnet at <a href="mailto:sales@novalnet.de" target="_blank">sales@novalnet.de</a> for getting your own merchant account.</td>
         </tr>
         <tr>
             <td><b>Authentication code</b></td>
-            <td>Merchant authentication code is provided by Novalnet after opening a merchant account at Novalnet.</td>
+            <td>Enter your merchant password (authentication code) received after opening a merchant account at Novalnet.</td>
         </tr>
         <tr>
             <td><b>Project ID</b></td>
-            <td>Project identification number is an unique ID of merchant project. The merchant can create N number of projects through <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal.</a></td>
+            <td>A unique identification number of a project created at the <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal.</a></td>
         </tr>
         <tr>
             <td><b>Tariff ID</b></td>
-            <td>Tariff identification number is an unique ID for each merchant project. The merchant can create N number of tariffs through <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal.</a></td>
+            <td>Tariff ID is a unique identifier for the created tariff plan. Select the required Tariff ID to make sure that proper Tariff ID is used for this project.</td>
         </tr>
         <tr>
             <td><b>Payment access key</b></td>
-            <td>This is the secure public key for encryption and decryption of transaction parameters. This is mandatory value for all online transfers, Credit Card-3D secure and wallet systems. </td>
-        </tr>
-        <tr>
-            <td><b>Gateway timeout (in seconds)</b></td>
-            <td>
-                In case the order processing time exceeds the gateway timeout, the order will not be placed.
-            </td>
-        </tr>
-        <tr>
-            <td><b>Proxy server</b></td>
-            <td>
-                Enter the IP address of your proxy server along with the port number in the following format IP Address : Port Number (if applicable)
-            </td>
-        </tr>
-        <tr>
-            <td><b>Referrer ID</b></td>
-            <td>
-                Referrer ID of the person/company who recommended you Novalnet.
-            </td>
-        </tr>
-        <tr>
-        <td class="th" align=CENTER colspan="2"><b>Payment settings</b></td>
-        </tr>
-        <tr>
-        <td class="th" align=CENTER colspan="2">General</td>
-        </tr>
-        <tr>
-            <td><b>Enable payment method</b></td>
-            <td>Use this option to enable / disable payment methods.</td>
-        </tr>
-        <tr>
-            <td><b>Enable test mode</b></td>
-            <td>The payment will be processed in the test mode therefore amount for this transaction will not be charged.</td>
-        </tr>
-        <tr>
-            <td><b>Upload payment logo</b></td>
-            <td>The payment method logo will be displayed on the checkout page.</td>
-        </tr>
-        <tr>
-            <td><b>Minimum order amount</b></td>
-            <td>Minimum Order Amount to offer this Payment (in minimum unit ofcurrency. E.g. enter 100 which is equal to 1.00)</td>
-        </tr>
-        <tr>
-            <td><b>Maximum order amount</b></td>
-            <td>Maximum Order Amount to offer this Payment (in minimum unit of currency. E.g. enter 100 which is equal to 1.00)</td>
-        </tr>
-        <tr>
-            <td><b>Allowed countries</b></td>
-            <td>This Payment method will be allowed for the mentioned country. Enter the countries in the following format E.g. DE, AT, CH. In case if the field is empty, all the countries will be allowed.</td>
-        </tr>
-        <td class="th" align=CENTER colspan="2">Credit Card</td>
-        </tr>
-        <tr>
-            <td><b>Enable 3D secure</b></td>
-            <td>The 3D-Secure will be activated for credit cards. The issuing bank prompts the buyer for a password what, in turn, help to prevent a fraudulent payment. It can be used by the issuing bank as evidence that the buyer is indeed their card holder. This is intended to help decrease a risk of charge-back.</td>
-        </tr>
-        <tr>
-            <td><b>Force 3D secure on predefined conditions</b></td>
-            <td>If 3D secure is not enabled in the above field, then force 3D secure process as per the "Enforced 3D secure (as per predefined filters & settings)" module configuration at the <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal.</a> If the predefined filters & settings from Enforced 3D secure module are met, then the transaction will be processed as 3D secure transaction otherwise it will be processed as non 3D secure. Please note that the "Enforced 3D secure (as per predefined filters & settings)" module should be configured at <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal</a> prior to the activation here. For further information, please refer the description of this fraud module at "Fraud Modules" tab, below "Projects" menu, under the selected project in <a href="https://admin.novalnet.de/" target="_blank">Novalnet Merchant Administration Portal</a> or contact Novalnet support team.</td>
-        </tr>
-        <tr>
-            <td><b>Payment action</b></td>
-            <td>Capture / Authorize</td>
-        </tr>
-        <tr>
-            <td><b>Minimum transaction limit for authorization</b></td>
-            <td>In case the order amount exceeds the mentioned limit, the transaction will be set on-hold till your confirmation of the transaction. You can leave the field empty if you wish to process all the transactions as on-hold.</td>
-        </tr>
-        <tr>
-        <td class="th" align=CENTER colspan="2">Direct Debit SEPA</td>
-        </tr>
-        <tr>
-            <td><b>SEPA payment duration (in days)</b></td>
-            <td>Enter the number of days after which the payment should be processed (must be between 2 and 14 days)</td>
-        </tr>
-        <tr>
-            <td><b>Payment action</b></td>
-            <td>Capture / Authorize</td>
-        </tr>
-        <tr>
-            <td><b>Minimum transaction limit for authorization</b></td>
-            <td>In case the order amount exceeds mentioned limit, the transaction will be set on hold till your confirmation of transaction.You can leave the field empty if you wish to process all the transactions as on-hold.</td>
-        </tr>
-        <tr>
-            <td><b>Enable payment guarantee</b></td>
-            <td><b>Basic requirements for payment guarantee:</b><br > -> Allowed countries: AT, DE, CH. <br > -> Allowed currency: EUR.<br > -> Minimum amount of order >= 9,99 EUR.<br > -> Minimum age of end customer >= 18 Years.<br > -> The billing address must be the same as the shipping address.<br > -> Gift certificates/ vouchers are not allowed.</td>
-        </tr>
-        <tr>
-            <td><b>Minimum order amount (in minimum unit of currency. E.g. enter 100 which is equal to 1.00)</b></td>
-            <td>This setting will override the default setting made in the minimum order amount. Note: Minimum amount should be greater than or equal to 9,99 EUR.</td>
-        </tr>
-        <tr>
-            <td><b>Force Non-Guarantee payment</b></td>
-            <td>If the payment guarantee is activated (True), but the above mentioned requirements are not met, the payment should be processed as non-guarantee payment.</td>
-        </tr>
-        <td class="th" align=CENTER colspan="2">Invoice</td>
-        <tr>
-            <td><b>Payment due date (in days)</b></td>
-            <td>Enter the Number of days to transfer the payment amount to Novalnet (must be greater than 7 days). In case if the field is empty, 14 days will be set as due date by default.</td>
-        </tr>
-        <tr>
-            <td><b>Payment action</b></td>
-            <td>Capture / Authorize</td>
-        </tr>
-        <tr>
-            <td><b>Minimum transaction limit for authorization</b></td>
-            <td>In case the order amount exceeds mentioned limit, the transaction will be set on hold till your confirmation of transaction.You can leave the field empty if you wish to process all the transactions as on-hold.</td>
-        </tr>
-        <tr>
-            <td><b>Enable payment guarantee</b></td>
-            <td><b>Basic requirements for payment guarantee:</b><br > -> Allowed countries: AT, DE, CH. <br > -> Allowed currency: EUR.<br > -> Minimum amount of order >= 9,99 EUR.<br > -> Minimum age of end customer >= 18 Years.<br > -> The billing address must be the same as the shipping address.<br > -> Gift certificates/ vouchers are not allowed.</td>
-        </tr>
-        <tr>
-            <td><b>Minimum order amount (in minimum unit of currency. E.g. enter 100 which is equal to 1.00)</b></td>
-            <td>This setting will override the default setting made in the minimum order amount. Note: Minimum amount should be greater than or equal to 9,99 EUR.</td>
-        </tr>
-        <tr>
-            <td><b>Force Non-Guarantee payment</b></td>
-            <td>If the payment guarantee is activated (True), but the above mentioned requirements are not met, the payment should be processed as non-guarantee payment.</td>
-        </tr>
-        <td class="th" align=CENTER colspan="2">Barzahlen</td>
-        <tr>
-            <td><b>Slip expiry date (in days)</b></td>
-            <td>Enter the number of days to pay the amount at store near you. If the field is empty, 14 days will be set as default.</td>
-        </tr>
-        <td class="th" align=CENTER colspan="2">Paypal</td>
-        <tr>
-            <td><b>Payment action</b></td>
-            <td>Capture / Authorize</td>
-        </tr>
-        <tr>
-            <td><b>Minimum transaction limit for authorization</b></td>
-            <td>In case the order amount exceeds mentioned limit, the transaction will be set on hold till your confirmation of transaction(In order to use this option you must have billing agreement option enabled in your PayPal account. Please contact your account manager at PayPal)</td>
+            <td>Secure public key for encryption and decryption of transaction parameters. This is mandatory value for all online transfers, Credit Card-3D secure and wallet systems. </td>
         </tr>
     </tbody>
 </table>
