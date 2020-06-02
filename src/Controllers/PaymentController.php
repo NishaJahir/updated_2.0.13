@@ -186,16 +186,23 @@ class PaymentController extends Controller
             if('guarantee' == $guranteeStatus)
             {    
                 $birthday = sprintf('%4d-%02d-%02d',$requestData['nn_guarantee_year'],$requestData['nn_guarantee_month'],$requestData['nn_guarantee_date']);
-                 
+                $birthday = !empty($dob)? $dob :  $birthday;
+                
+                if( time() < strtotime('+18 years', strtotime($birthday)) && empty($address->companyName))
+                {
+                    $notificationMessage = $this->paymentHelper->getTranslatedText('dobinvalid');
+                    $this->paymentService->pushNotification($notificationMessage, 'error', 100);
+                    return $this->response->redirectTo('checkout');
+                }
                     // Guarantee Params Formation 
                     if( $requestData['paymentKey'] == 'NOVALNET_SEPA' ) {
                     $serverRequestData['data']['payment_type'] = 'GUARANTEED_DIRECT_DEBIT_SEPA';
                     $serverRequestData['data']['key']          = '40';
-                    $serverRequestData['data']['birth_date']   =  !empty($dob)? $dob :  $birthday;
+                    $serverRequestData['data']['birth_date']   =  $birthday;
                     } else {                        
                     $serverRequestData['data']['payment_type'] = 'GUARANTEED_INVOICE';
                     $serverRequestData['data']['key']          = '41';
-                    $serverRequestData['data']['birth_date']   =  !empty($dob)? $dob :  $birthday;
+                    $serverRequestData['data']['birth_date']   =  $birthday;
                     }
             }
         }
