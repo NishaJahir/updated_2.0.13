@@ -2,34 +2,47 @@
    <strong><i>Note:</i></strong> The Novalnet plugin has been developed for use with the online store Ceres and only works with its structure or other template plugins. IO plugin is required.
 </div>
 
+### Long description:
+
 # Novalnet payment plugin for plentymarkets
 
-Novalnet payment plugin for plentymarkets simplifies your daily work by automating the entire payment process from checkout till collection. This plugin is designed to help you increase your sales by offering various international and local payment methods. The plugin which is perfectly adjusted to plentymarkets and the top-quality range of services of the payment provider Novalnet.
+Novalnet's payment plugin for plentymarkets is an end-to-end solution for accepting both international and local payments across the world. This full-service payment plugin automates your entire payment processing through one single PCI certified payment platform including the following benefits and more:
+    • End-to-end payment solution incl. 15+ automated payment services (e.g. debt collection, fraud prevention) 
+    • Accept and process 100+ international and local payment methods
+    • One contract - no hidden costs or restrictive contract terms for payment processing
+    • PCI compliance (PCI DSS Level 1) & extensive payment licensing ready for you
+    • Professional customer support on many levels (e.g. merchant + buyer support) directly in-house
+The Novalnet payment plugin integrates your business with the BaFin (German Federal Financial Supervisory Authority) accredited Novalnet payment platform and eliminates the need of multiple contracts and licenses for successful payment processing. Streamline your payment processes and focus on your core businesses' growth!
 
-The various range of payment methods includes **Credit Card**, **Direct Debit SEPA**, **PayPal**, **Invoice**, **Online transfer**, **iDeal** and so on.
+# Supported Novalnet payment methods
+
+ • Credit Card (3DSecure and non 3DSecure)
+ • Direct Debit SEPA
+ • Direct Debit SEPA with payment guarantee
+ • Invoice
+ • Invoice with payment guarantee
+ • Prepayment
+ • Instant Bank Transfer
+ • iDEAL
+ • PayPal
+ • giropay
+ • eps
+ • Przelewy24
+ • Barzahlen
 
 ## Opening a Novalnet merchant account
 
-You need to open an merchant account with Novalnet before you can set up the payment plugin in the plentymarket. You will then receive the credentials that is required to install and configure the payment method. Please contact Novalnet at [sales@novalnet.de](mailto:sales@novalnet.de) for getting your own merchant account.
+To accept and process payments via the Novalnet payment plugin for plentymarkets, you need to have a Novalnet merchant account. You can get your account by contacting us either by phone at +49 89 9230683-20 or by email at sales@novalnet.de. More information about the Novalnet merchant account can be found at www.novalnet.com
 
 ## Configuring Novalnet in plentymarkets
 
 To set up the merchant credentials, navigate to the path **Plugins -> Plugin overview -> Novalnet -> Configuration**
 
-### Novalnet Global Configuration
-
-- Fill in your Novalnet merchant account details to make the payment method appear in the online store.
-- The fields **Merchant ID**, **Authentication code**, **Project ID**, **Tariff ID** and **Payment access key** are necessary and also marked mandatory.
-- These values can be retrieved from the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
-- After filling those values in the respective fields, you must check the option **Enable payment method** to complete the Novalnet payment setup in your store.
-
-##### Retrieving Novalnet merchant account details:
-
-1. Login into your merchant account.
-2. Navigate to the tab **PROJECTS**.
-3. Select the corresponding product.
-4. Under the **Shop Parameters**, you will find the details required.
-5. On an important note, you might find mutiple **Tarif ID's** (if created more than one for your project). Get the Tarif ID which you wish to use it in the online store.
+Fill in your Novalnet merchant account details as follows:
+    1. Login into your merchant account at Novalnet Merchant Administration Portal
+    2. Navigate to the tab PROJECT
+    3. Select the corresponding product
+    4. Go to Shop Parameters and copy the necessary fields such as Merchant ID, Authentication code, Project ID, Tariff ID and Payment access key etc.
 
 ### Novalnet configuration along with it's descriptions
 
