@@ -336,10 +336,13 @@ class NovalnetServiceProvider extends ServiceProvider
                                             $serverRequestData['data']['payment_type'] = 'GUARANTEED_INVOICE';
                                             $serverRequestData['data']['key'] = '41';
                                             $serverRequestData['data']['birth_date'] = !empty($birthday) ? $birthday : '';
-					    if (!empty($birthday) && time() < strtotime('+18 years', strtotime($birthday))) {
+					    if (empty($address->companyName) && time() < strtotime('+18 years', strtotime($birthday))) {
 					      $content = 'DOB Error';
                                               $contentType = 'errorCode';   
-					    }
+					    } elseif (!empty ($address->companyName) ) {
+            unset($serverRequestData['data']['birth_date']);
+        }
+
                                         }
                                     $sessionStorage->getPlugin()->setValue('nnPaymentData', $serverRequestData);
                                     
