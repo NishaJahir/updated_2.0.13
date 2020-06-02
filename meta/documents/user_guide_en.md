@@ -2,6 +2,10 @@
    <strong><i>Note:</i></strong> The Novalnet plugin has been developed for use with the online store Ceres and only works with its structure or other template plugins. IO plugin is required.
 </div>
 
+### Short description:
+
+Payment plugin for accepting international/local payments and automating the entire payment processing from checkout to collection - through a single PCI certified payment platform. The official Novalnet plugin for the online store Ceres and other template plugins. 
+
 ### Long description:
 
 # Novalnet payment plugin for plentymarkets
@@ -215,35 +219,80 @@ To set up an event procedure to confirm, cancel or refund Novalnet transactions:
     </caption>
 </table>
 
-## Displaying the payment transaction details on the invoice pdf
+## Display transaction details on Invoice PDF
 
-Generating invoice for the orders to display the payment transaction details in invoice pdf except for the initial order created events.
+To display the payment transaction details in the invoice (pdf), please follow the below steps:
 
-## Displaying the payment transaction details on the order confirmation page
+1. Go to **System » Orders » Events**
+2. Click on **Add event procedure** 
+3. **Create new event procedure** window opens
+4. Enter a name
+5. Select the event according to table 4
+6. **Save** the settings → The event procedure is created
+7. Carry out the further settings according to table 4
+8. Place a check mark next to the option **Active**
+9. **Save** the settings → The event procedure is saved
 
-To display the payment transaction details on the order confirmation page, perform the steps as follows.
+<table>
+   <thead>
+    </tr>
+      <th>
+         Setting
+      </th>
+      <th>
+         Option
+      </th>
+      <th>
+         Selection
+      </th>
+    </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><strong>Event</strong></td>
+         <td>Select the event to trigger an Invoice PDF</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><strong>Filter 1</strong></td>
+         <td><strong>Order > Payment method</strong></td>
+         <td><strong>Plugin: Novalnet</strong></td>
+      </tr>
+     <tr>
+        <td><strong>Procedure</strong></td>
+        <td><strong>Plugins > Invoice PDF attachment</strong></td>
+        <td></td>
+      </tr>
+    </tbody>
+    <caption>
+    Table 4: Event procedure to display transaction details in Invoice PDF 
+    </caption>
+</table>
+   
 
-##### Displaying transaction details:
+## Update of Notification / Webhook URL
 
-1. Go to **CMS » Container links**..
-3. Go to the **Novalnet payment details** area.
-4. Activate the container **Order confirmation: Additional payment information**.
-5. **Save** the settings.<br />→ The payment transaction details will be displayed on the order confirmation page.
+**Payment / Transaction status notification - Asynchronous vendor script**
+Novalnet system (via asynchronous) transmits information about all transaction and their status to the merchant’s system.
+Notification / Webhook URL Configuration:
+    1. Login into your merchant account at the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
+    2. Navigate to the tab **PROJECT**
+    3. Select the corresponding product
+    4. Project Overview
+    5. Set up the **Vendor script URL / Notification & Webhook URL** for your store. In general the Notification / Webhook URL will be like **YOUR SITE URL/payment/novalnet/callback**
 
-## Update of Vendor Script URL
+## Display transaction details on order confirmation page
 
-Vendor script URL is required to keep the merchant’s database/system up-to-date and synchronized with Novalnet transaction status. It is mandatory to configure the Vendor Script URL in [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
+To display the payment transaction details on the order confirmation page, please follow the below steps: 
 
-Novalnet system (via asynchronous) will transmit the information on each transaction and its status to the merchant’s system.
+1. Navigate to **CMS » Container links**
+2. Go to the **Novalnet payment details area**.
+3. Activate the container **Order confirmation: Additional payment information**.
+4. **Save** the settings → The payment transaction details will be displayed
 
-To configure Vendor Script URL,
+## Further information and support
 
-1. Login into your merchant account.
-2. Navigate to the tab **PROJECTS**.
-3. Select the corresponding product.
-4. Under the tab **Project Overview**.
-5. Set up the **Vendor script URL** fof your store. In general the vendor script URL will be like **YOUR SITE URL/payment/novalnet/callback**.
-
-## Further reading
-
-To know more information about the Novalnet and it's features, please contact at  [sales@novalnet.de](mailto:sales@novalnet.de)
+We are glad to answer all your questions and provide you with more information any time. Please do not hesitate to contact us at: 
+**E-mail:** sales@novalnet.de 
+**Tel: +49 89 - 923 068 320** 
+**Web:** www.novalnet.de 
