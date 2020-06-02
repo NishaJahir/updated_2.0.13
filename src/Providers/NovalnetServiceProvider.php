@@ -406,7 +406,13 @@ class NovalnetServiceProvider extends ServiceProvider
         }
         $paymentKey = $paymentHelper->getPaymentKeyByMop($payments[0]->mopId);
         $db_details = $paymentService->getDatabaseValues($order->id);
-        
+        $this->getLogger(__METHOD__)->error('dbbb',$db_details );
+	$get_transaction_details = $transactionLog->getTransactionData('orderNo', $orderId);
+                    $totalCallbackAmount = 0;
+                    foreach ($get_transaction_details as $transaction_details) {
+                       $totalCallbackAmount += $transaction_details->callbackAmount;
+                    }
+		$this->getLogger(__METHOD__)->error('dbbb amount',$totalCallbackAmount );
         if (in_array($paymentKey, ['NOVALNET_INVOICE', 'NOVALNET_PREPAYMENT', 'NOVALNET_CC', 'NOVALNET_SEPA', 'NOVALNET_CASHPAYMENT', 'NOVALNET_SOFORT', 'NOVALNET_IDEAL', 'NOVALNET_EPS', 'NOVALNET_GIROPAY', 'NOVALNET_PAYPAL', 'NOVALNET_PRZELEWY']) && !empty($db_details['plugin_version'])
         ) {
              
@@ -418,11 +424,11 @@ class NovalnetServiceProvider extends ServiceProvider
                 if(!empty($db_details['test_mode'])) {
                     $comments .= PHP_EOL . $paymentHelper->getTranslatedText('test_order');
                 }
-                if($paymentKey == 'NOVALNET_INVOICE' && in_array($tid_status, ['91', '100'])) {
+                if(in_array($tid_status, ['91', '100']) && ($db_details['payment_id'] == '27' && ($transaction_details->amount > $totalCallbackAmount) || $db_details['payment_id'] == '41') ) {
                 $comments .= PHP_EOL . $paymentService->getInvoicePrepaymentComments($bank_details);
                 
                 }
-                    if($paymentKey == 'NOVALNET_CASHPAYMENT') {
+                if($db_details['payment_id'] == '59' && ($transaction_details->amount > $totalCallbackAmount)) {
                 $comments .= PHP_EOL . $cashpayment_comments;   
                 }
                 $orderPdfGenerationModel = pluginApp(OrderPdfGeneration::class);
