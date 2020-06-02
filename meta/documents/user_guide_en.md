@@ -12,23 +12,24 @@ Novalnet's payment plugin for plentymarkets is an end-to-end solution for accept
 - One contract - no hidden costs or restrictive contract terms for payment processing
 - PCI compliance (PCI DSS Level 1) & extensive payment licensing ready for you
 - Professional customer support on many levels (e.g. merchant + buyer support) directly in-house
+
 The Novalnet payment plugin integrates your business with the BaFin (German Federal Financial Supervisory Authority) accredited Novalnet payment platform and eliminates the need of multiple contracts and licenses for successful payment processing. Streamline your payment processes and focus on your core businesses' growth!
 
 # Supported Novalnet payment methods
 
- • Credit Card (3DSecure and non 3DSecure)
- • Direct Debit SEPA
- • Direct Debit SEPA with payment guarantee
- • Invoice
- • Invoice with payment guarantee
- • Prepayment
- • Instant Bank Transfer
- • iDEAL
- • PayPal
- • giropay
- • eps
- • Przelewy24
- • Barzahlen
+- Credit Card (3DSecure and non 3DSecure)
+- Direct Debit SEPA
+- Direct Debit SEPA with payment guarantee
+- Invoice
+- Invoice with payment guarantee
+- Prepayment
+- Instant Bank Transfer
+- iDEAL
+- PayPal
+- giropay
+- eps
+- Przelewy24
+- Barzahlen
 
 ## Opening a Novalnet merchant account
 
@@ -39,12 +40,10 @@ To accept and process payments via the Novalnet payment plugin for plentymarkets
 To set up the merchant credentials, navigate to the path **Plugins -> Plugin overview -> Novalnet -> Configuration**
 
 Fill in your Novalnet merchant account details as follows:
-    1. Login into your merchant account at Novalnet Merchant Administration Portal
-    2. Navigate to the tab PROJECT
-    3. Select the corresponding product
-    4. Go to Shop Parameters and copy the necessary fields such as Merchant ID, Authentication code, Project ID, Tariff ID and Payment access key etc.
-
-### Novalnet configuration along with it's descriptions
+1. Login into your merchant account at Novalnet Merchant Administration Portal
+2. Navigate to the tab PROJECT
+3. Select the corresponding product
+4. Go to Shop Parameters and copy the necessary fields such as Merchant ID, Authentication code, Project ID, Tariff ID and Payment access key etc.
 
 <table>
     <thead>
