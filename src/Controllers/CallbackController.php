@@ -111,6 +111,7 @@ class CallbackController extends Controller
                             'CREDIT_ENTRY_CREDITCARD',
                             'DEBT_COLLECTION_CREDITCARD',
                             'SUBSCRIPTION_STOP',
+		    'TRANSACTION_CANCELLATION'
                         ],
             'novalnet_sepa'  => [
                             'DIRECT_DEBIT_SEPA',
@@ -165,6 +166,7 @@ class CallbackController extends Controller
                             'PAYPAL',
                             'SUBSCRIPTION_STOP',
                             'PAYPAL_BOOKBACK',
+		    'TRANSACTION_CANCELLATION',
                             'REFUND_BY_BANK_TRANSFER_EU'
                         ],
             'novalnet_ideal' => [
@@ -297,7 +299,8 @@ class CallbackController extends Controller
                 $callbackComments = '</br>' . sprintf($this->paymentHelper->getTranslatedText('callback_transaction_cancellation',$orderLanguage),date('d.m.Y'), date('H:i:s'));
                 $this->paymentHelper->updateOrderStatus($nnTransactionHistory->orderNo, (float) $this->config->get('Novalnet.novalnet_order_cancel_status'));
                 $this->paymentHelper->updatePayments($this->aryCaptureParams['tid'], $this->aryCaptureParams['tid_status'], $nnTransactionHistory->orderNo);
-                return $this->renderTemplate($callbackComments);
+                $this->sendCallbackMail($callbackComments);
+		    return $this->renderTemplate($callbackComments);
             }
             if($this->getPaymentTypeLevel() == 2 && $this->aryCaptureParams['tid_status'] == '100')
             {
@@ -424,7 +427,7 @@ class CallbackController extends Controller
                     {
                         return $this->renderTemplate('Novalnet Callbackscript received. Order already Paid');
                     }
-                }  elseif (in_array($this->aryCaptureParams['payment_type'], ['INVOICE_START', 'GUARANTEED_INVOICE', 'DIRECT_DEBIT_SEPA', 'GUARANTEED_DIRECT_DEBIT_SEPA'] )) {
+                }  elseif (in_array($this->aryCaptureParams['payment_type'], ['CREDITCARD', 'INVOICE_START', 'GUARANTEED_INVOICE', 'DIRECT_DEBIT_SEPA', 'GUARANTEED_DIRECT_DEBIT_SEPA'] )) {
                 
                     $transactionStatus = $this->payment_details($nnTransactionHistory->orderNo);
                     $saveAdditionData = false;
