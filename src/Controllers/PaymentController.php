@@ -145,7 +145,14 @@ class PaymentController extends Controller
     {
         $requestData = $this->request->all();
         $notificationMessage = $this->paymentHelper->getNovalnetStatusText($requestData);
-        
+        $basket = $this->basketRepository->load();  
+        $billingAddressId = $basket->customerInvoiceAddressId;
+        $address = $this->addressRepository->findAddressById($billingAddressId);
+        foreach ($address->options as $option) {
+            if ($option->typeId == 9) {
+            $dob = $option->value;
+            }
+       }
         $serverRequestData = $this->paymentService->getRequestParameters($this->basketRepository->load(), $requestData['paymentKey']);
         if (empty($serverRequestData['data']['first_name']) && empty($serverRequestData['data']['last_name'])) {
         $notificationMessage = $this->paymentHelper->getTranslatedText('nn_first_last_name_error');
@@ -184,11 +191,11 @@ class PaymentController extends Controller
                     if( $requestData['paymentKey'] == 'NOVALNET_SEPA' ) {
                     $serverRequestData['data']['payment_type'] = 'GUARANTEED_DIRECT_DEBIT_SEPA';
                     $serverRequestData['data']['key']          = '40';
-                    $serverRequestData['data']['birth_date']   =  $birthday;
+                    $serverRequestData['data']['birth_date']   =  !empty($dob)? $dob :  $birthday;
                     } else {                        
                     $serverRequestData['data']['payment_type'] = 'GUARANTEED_INVOICE';
                     $serverRequestData['data']['key']          = '41';
-                    $serverRequestData['data']['birth_date']   =  $birthday;
+                    $serverRequestData['data']['birth_date']   =  !empty($dob)? $dob :  $birthday;
                     }
             }
         }
