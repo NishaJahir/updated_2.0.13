@@ -231,7 +231,7 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-
 
 ## Aktualisieren der Notification- / Webhook-URL
 
-# Zahlungs-/Transaktionsstatus-Benachrichtigung – Asynchrones Händler-Skript
+### Zahlungs-/Transaktionsstatus-Benachrichtigung – Asynchrones Händler-Skript
 
 Das Novalnet-System überträgt (über asynchronen Aufruf) Informationen über den gesamten Transaktionsstatus an das System des Händlers.
 Konfiguration der Notification- / Webhook-URL:
