@@ -1,10 +1,6 @@
-<div class="alert alert-warning" role="alert">
-   <strong><i>Hinweis:</i></strong> Das Novalnet Plugin wurde für die Verwendung mit dem Onlineshop System CERES entwickelt und funktioniert nur in dieser Struktur oder anderen Tempalte-Plugins. Ein IO Plugin ist erforderlich.
-</div>
-
 ### Short description: (Understanding purpose)
 
-Zahlungs-Plugin für die Annahme von lokalen und internationalen Zahlungen und für die Automatisierung der gesamten Zahlungsabwicklung vom Checkout bis zum Inkasso – über eine einzige PCI-zertifizierte Zahlungsplattform. Dies ist das offizielle Novalnet-Plugin für den Online-Shop Ceres und andere Vorlagen-Plugins.
+Zahlungs-Plugin für die Annahme von lokalen und internationalen Zahlungen und für die Automatisierung der gesamten Zahlungsabwicklung vom Checkout bis zum Inkasso – über eine einzige PCI-zertifizierte Zahlungsplattform. Dies ist das offizielle Novalnet-Plugin für den Online-Shop Ceres und andere Vorlagen-Plugins. Ein IO Plugin ist erforderlich.
 
 ### Long description: (Understanding purpose)
 
@@ -229,6 +225,42 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-
 7. Setzen Sie ein Häkchen bei **Aktiv**.
 8. **Speichern** Sie die Einstellungen. <br > -> Die Ereignisaktion wird gespeichert.
 
+<table>
+   <thead>
+    </tr>
+      <th>
+         Setting
+      </th>
+      <th>
+         Option
+      </th>
+      <th>
+         Selection
+      </th>
+    </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><strong>Ereignis</strong></td>
+         <td>Wählen Sie das Ereignis (Event) aus, das eine PDF-Rechnung auslösen soll </td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><strong>Filter 1</strong></td>
+         <td><strong>Auftrag > Zahlungsart</strong></td>
+         <td><strong>Plugin: Novalnet</strong></td>
+      </tr>
+     <tr>
+        <td><strong>Aktion</strong></td>
+        <td><strong>Plugins > Rechnung erzeugen</strong></td>
+        <td></td>
+      </tr>
+    </tbody>
+    <caption>
+    Tabelle 4: Ereignisaktion (Event procedure) um Transaktionsdetails in Rechnungs-PDF anzuzeigen
+    </caption>
+</table>
+
 ## Aktualisieren der Notification- / Webhook-URL
 
 ### Zahlungs-/Transaktionsstatus-Benachrichtigung – Asynchrones Händler-Skript
@@ -251,14 +283,4 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails auf der Auftr
 1. Gehen Sie auf **CMS » Container-Verknüpfungen**
 2. Klicken Sie auf **Novalnet payment details (Novalnet)**
 3. Aktivieren Sie das Feld **Order confirmation: Additional payment information**.
-4. Klicken Sie auf **Speichern**. Nun werden die Transaktionsdetails angezeigt.
-
-## Weitere Informationen und Support
-
-Wir beantworten gerne alle Ihre Fragen und stehen Ihnen jederzeit für weitere Informationen zur Verfügung. Bitte zögern Sie nicht, uns zu kontaktieren:
-
-E-Mail: sales@novalnet.de 
-
-Tel: +49 89 923068320 
-
-Web: www.novalnet.de 
+4. Klicken Sie auf **Speichern**. Nun werden die Transaktionsdetails angezeigt. 
