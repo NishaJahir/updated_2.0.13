@@ -1,10 +1,6 @@
-<div class="alert alert-warning" role="alert">
-   <strong><i>Note:</i></strong> The Novalnet plugin has been developed for use with the online store Ceres and only works with its structure or other template plugins. IO plugin is required.
-</div>
-
 ### Short description:
 
-Payment plugin for accepting international/local payments and automating the entire payment processing from checkout to collection - through a single PCI certified payment platform. The official Novalnet plugin for the online store Ceres and other template plugins. 
+Payment plugin for accepting international/local payments and automating the entire payment processing from checkout to collection - through a single PCI certified payment platform. The official Novalnet plugin for the online store Ceres and other template plugins. IO plugin is required.
 
 ### Long description:
 
@@ -260,7 +256,7 @@ To display the payment transaction details in the invoice (pdf), please follow t
       </tr>
      <tr>
         <td><strong>Procedure</strong></td>
-        <td><strong>Plugins > Invoice PDF attachment</strong></td>
+        <td><strong>Plugins > Generate invoice</strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -288,14 +284,4 @@ To display the payment transaction details on the order confirmation page, pleas
 1. Navigate to **CMS » Container links**
 2. Go to the **Novalnet payment details area**.
 3. Activate the container **Order confirmation: Additional payment information**.
-4. **Save** the settings <br />→ The payment transaction details will be displayed
-
-## Further information and support
-
-We are glad to answer all your questions and provide you with more information any time. Please do not hesitate to contact us at:
-
-**E-mail:** sales@novalnet.de
-
-**Tel: +49 89 - 923 068 320**
-
-**Web:** www.novalnet.de 
+4. **Save** the settings <br />→ The payment transaction details will be displayed 
