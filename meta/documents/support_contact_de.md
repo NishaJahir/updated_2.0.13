@@ -1,7 +1,9 @@
-## Unterstützung
+## Weitere Informationen und Support
 
-Bei Fragen oder Anregungen stehen wir Ihnen gerne zur Verfügung:
+Wir beantworten gerne alle Ihre Fragen und stehen Ihnen jederzeit für weitere Informationen zur Verfügung. Bitte zögern Sie nicht, uns zu kontaktieren:
 
-•   über unsere Webseite: [Novalnet AG](https://www.novalnet.de/kontakt/haendler)
-•   per E-Mail an [sales@novalnet.de](mailto:sales@novalnet.de)
-•   oder telefonisch unter +49 89 9230683-20 (Montag bis Freitag von 09:00 bis 18:00 Uhr).
+E-Mail: sales@novalnet.de 
+
+Tel: +49 89 923068320 
+
+Web: www.novalnet.de
