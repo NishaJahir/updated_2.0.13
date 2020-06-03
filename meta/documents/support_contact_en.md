@@ -1,4 +1,9 @@
-## Support
+## Further information and support
 
-If you have a question, please contact [Novalnet AG](https://www.novalnet.com/contact)
-or via E-Mail [sales@novalnet.de](mailto:sales@novalnet.de) or Phone: +49 (0)89 923 068 320
+We are glad to answer all your questions and provide you with more information any time. Please do not hesitate to contact us at:
+
+**E-mail:** sales@novalnet.de
+
+**Tel: +49 89 - 923 068 320**
+
+**Web:** www.novalnet.de
