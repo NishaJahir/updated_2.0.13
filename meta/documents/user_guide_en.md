@@ -1,8 +1,4 @@
-### Short description:
-
 Payment plugin for accepting international/local payments and automating the entire payment processing from checkout to collection - through a single PCI certified payment platform. The official Novalnet plugin for the online store Ceres and other template plugins. IO plugin is required.
-
-### Long description:
 
 # Novalnet payment plugin for plentymarkets
 
@@ -37,9 +33,10 @@ To accept and process payments via the Novalnet payment plugin for plentymarkets
 
 ## Configuring Novalnet in plentymarkets
 
-To set up the merchant credentials, navigate to the path **Plugins -> Plugin overview -> Novalnet -> Configuration**
+To set up your Novalnet payment plugin and start accepting payments, navigate to **Plugins -> Plugin overview -> Novalnet -> Configuration**
 
 Fill in your Novalnet merchant account details as follows:
+
 1. Login into your merchant account at [Novalnet Merchant Administration Portal](https://admin.novalnet.de/)
 2. Navigate to the tab **PROJECT**
 3. Select the corresponding product
@@ -94,7 +91,7 @@ For more detailed information, please follow the **Novalnet Payment Plugin Insta
 
 ## Event creation for confirm/cancel/refund transactions
 
-To set up an event procedure to confirm, cancel or refund Novalnet transactions:Set up an event procedure to Confirm, Cancel and Refund the Novalnet transactions:
+To set up an event procedure to confirm, cancel or refund Novalnet transactions:
 
 1. Go to **System » Orders » Events**.
 2. Click on **Add event procedure**. <br > → The **Create new event procedure** window opens.
@@ -256,7 +253,7 @@ To display the payment transaction details in the invoice (pdf), please follow t
       </tr>
      <tr>
         <td><strong>Procedure</strong></td>
-        <td><strong>Plugins > Generate invoice</strong></td>
+        <td><strong>Documents > Generate invoice</strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -267,9 +264,11 @@ To display the payment transaction details in the invoice (pdf), please follow t
    
 ## Update of Notification / Webhook URL
 
-**Payment / Transaction status notification - Asynchronous vendor script**
+### Payment / Transaction status notification - Asynchronous vendor script
+
 Novalnet system (via asynchronous) transmits information about all transaction and their status to the merchant’s system.
 Notification / Webhook URL Configuration:
+
 1. Login into your merchant account at the [Novalnet Merchant Administration Portal](https://admin.novalnet.de/).
 2. Navigate to the tab **PROJECT**
 3. Select the corresponding product
