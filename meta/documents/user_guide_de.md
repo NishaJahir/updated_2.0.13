@@ -14,6 +14,8 @@ Das Novalnet Payment-Plugin für Plentymarkets ist eine Ende-zu-Ende-Lösung fü
 - PCI-DSS Compliance (PCI DSS Level 1) & BaFin-Lizenz
 - Professionelle Kundenbetreuung auf mehreren Ebenen (z.B. Händler- und Endkunden-Support) inhouse (kein Callcenter)
 
+Das Novalnet-Zahlungsplugin bindet Ihre Verkaufsplattform an die von der BaFin (Bundesanstalt für Finanzdienstleistungsaufsicht) akkreditierte Novalnet-Zahlungsplattform an. Somit sind mehrere Verträge und Lizenzen für die Zahlungsabwicklung Ihres Plentymarkets-Systems überflüssig. Konzentrieren Sie sich auf das Wachstum Ihres Unternehmens, wir kümmern uns um alles rund um Ihre Zahlungsabwicklung!
+
 ## Unterstützte Zahlungsarten
 - Kreditkarte (mit und ohne 3D-Secure)
 - Lastschrift SEPA
