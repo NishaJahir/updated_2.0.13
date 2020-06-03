@@ -265,7 +265,6 @@ To display the payment transaction details in the invoice (pdf), please follow t
     </caption>
 </table>
    
-
 ## Update of Notification / Webhook URL
 
 **Payment / Transaction status notification - Asynchronous vendor script**
