@@ -1,8 +1,4 @@
-### Short description: (Understanding purpose)
-
 Zahlungs-Plugin für die Annahme von lokalen und internationalen Zahlungen und für die Automatisierung der gesamten Zahlungsabwicklung vom Checkout bis zum Inkasso – über eine einzige PCI-zertifizierte Zahlungsplattform. Dies ist das offizielle Novalnet-Plugin für den Online-Shop Ceres und andere Vorlagen-Plugins. Ein IO Plugin ist erforderlich.
-
-### Long description: (Understanding purpose)
 
 # Novalnet-Plugin für Plentymarkets:
 
@@ -41,7 +37,7 @@ Um Ihr Novalnet-Zahlungs-Plugin zu konfigurieren und mit der Annahme von Zahlung
 
 Geben Sie wie folgt Ihre Novalnet-Händlerdaten an:
 
-1. Melden Sie sich mit Ihrem Händeraccount im [Novalnet-Händleradministrationsportal](https://admin.novalnet.de/).
+1. Melden Sie sich mit Ihrem Händeraccount im [Novalnet-Händleradminportal](https://admin.novalnet.de/) an.
 2. Gehen Sie auf den Tab **PROJEKTE**
 3. Wählen Sie Ihr Projekt aus
 4. Klicken Sie auf Parameter Ihres Shops und füllen Sie die erforderlichen Felder aus: **Händler-ID**, **Authentifizierungscode**, **Projekt-ID**, **Tarif-ID** und **Zahlungs-Zugriffsschlüssel** etc.
@@ -84,7 +80,7 @@ Geben Sie wie folgt Ihre Novalnet-Händlerdaten an:
 
 ## Novalnet-Zahlungseinstellungen in Plentymarkets
 
-Um Ihre bevorzugten Zahlungsarten zu aktivieren, melden Sie sich im [Novalnet-Händleradministrationsportal](https://admin.novalnet.de/).
+Um Ihre bevorzugten Zahlungsarten zu aktivieren, melden Sie sich im [Novalnet-Händleradminportal](https://admin.novalnet.de/) an.
 
 1. Klicken Sie auf den Menüpunkt **PROJEKTE**.
 2. Wählen Sie das gewünschte Projekt aus.
@@ -133,7 +129,7 @@ So richten Sie ein neues Event zur Bestätigung, Stornierung oder Rückerstattun
       </tr>
       <tr>
         <td><strong>Aktion</strong></td>
-        <td><strong>Plugin > Novalnet | Bestätigen </strong></td>
+        <td><strong>Plugins > Novalnet | Bestätigen </strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -169,7 +165,7 @@ So richten Sie ein neues Event zur Bestätigung, Stornierung oder Rückerstattun
       </tr>
       <tr>
         <td><strong>Aktion</strong></td>
-        <td><strong>Plugin > Novalnet | Stornieren </strong></td>
+        <td><strong>Plugins > Novalnet | Stornieren </strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -205,7 +201,7 @@ So richten Sie ein neues Event zur Bestätigung, Stornierung oder Rückerstattun
       </tr>
       <tr>
         <td><strong>Aktion</strong></td>
-        <td><strong>Plugin > Novalnet | Rückerstattung </strong></td>
+        <td><strong>Plugins > Novalnet | Rückerstattung </strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -231,13 +227,13 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-
    <thead>
     </tr>
       <th>
-         Setting
+         Einstellung
       </th>
       <th>
          Option
       </th>
       <th>
-         Selection
+         Auswahl
       </th>
     </tr>
    </thead>
@@ -254,7 +250,7 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-
       </tr>
      <tr>
         <td><strong>Aktion</strong></td>
-        <td><strong>Plugins > Rechnung erzeugen</strong></td>
+        <td><strong>Dokumente > Rechnung erzeugen</strong></td>
         <td></td>
       </tr>
     </tbody>
@@ -270,7 +266,7 @@ Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-
 Das Novalnet-System überträgt (über asynchronen Aufruf) Informationen über den gesamten Transaktionsstatus an das System des Händlers.
 Konfiguration der Notification- / Webhook-URL:
 
-1. Melden Sie sich im [Novalnet-Händleradministrationsportal](https://admin.novalnet.de/).
+1. Melden Sie sich im [Novalnet-Händleradminportal](https://admin.novalnet.de/) an.
 2. Wählen Sie den Menüpunkt **Projekte** aus.
 3. Wählen Sie das gewünschte Projekt aus.
 4. Klicken Sie auf **Projektübersicht**
