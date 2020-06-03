@@ -221,13 +221,13 @@ So richten Sie ein neues Event zur Bestätigung, Stornierung oder Rückerstattun
 Führen Sie die folgenden Schritte aus, um die Transaktionsdetails im Rechnungs-PDF anzuzeigen:
 
 1. Öffnen Sie das Menü **System » Aufträge » Ereignisaktionen**.
-2. Klicken Sie auf **Ereignisaktion hinzufügen**. → Das Fenster **Neue Ereignisaktion erstellen** wird geöffnet.
+2. Klicken Sie auf **Ereignisaktion hinzufügen**. <br > -> Das Fenster **Neue Ereignisaktion erstellen** wird geöffnet.
 3. Geben Sie einen Namen ein.
 4. Wählen Sie das Ereignis gemäß Tabelle 4.
-5. **Speichern** Sie die Einstellungen. → Die Ereignisaktion wird angelegt.
+5. **Speichern** Sie die Einstellungen. <br > -> Die Ereignisaktion wird angelegt.
 6. Nehmen Sie die weiteren Einstellungen gemäß Tabelle 4 vor.
 7. Setzen Sie ein Häkchen bei **Aktiv**.
-8. **Speichern** Sie die Einstellungen. → Die Ereignisaktion wird gespeichert.
+8. **Speichern** Sie die Einstellungen. <br > -> Die Ereignisaktion wird gespeichert.
 
 ## Aktualisieren der Notification- / Webhook-URL
 
